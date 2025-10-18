@@ -1,0 +1,13 @@
+super usuario:
+admin
+contraseña1
+
+
+    //esto es para la funcion del login
+                <div class="remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Recordarme</label>
+                    </div>
+                    <a href="{% url 'password_reset' %}" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>

@@ -1,0 +1,42 @@
+{% extends 'layouts/base.html' %}
+{% block title %}Movimientos{% endblock %}
+{% block content %}
+<h2>Movimientos</h2>
+
+{% if user.groups.first.name in 'Administrador Vendedor' %}
+<form id="form-movimiento" class="mb-4">
+    <div class="row g-3">
+        <div class="col-md-3">
+            <input type="number" id="producto_id" class="form-control" placeholder="ID Producto" required>
+        </div>
+        <div class="col-md-3">
+            <select id="tipo" class="form-select" required>
+                <option value="">Tipo</option>
+                <option value="ENTRADA">ENTRADA</option>
+                <option value="SALIDA">SALIDA</option>
+                <option value="MERMA">MERMA</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <input type="number" id="cantidad" class="form-control" placeholder="Cantidad" required>
+        </div>
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-primary w-100">Crear Movimiento</button>
+        </div>
+    </div>
+</form>
+{% endif %}
+
+<table class="table table-striped" id="movimientos-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Producto</th>
+            <th>Tipo</th>
+            <th>Cantidad</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+{% endblock %}

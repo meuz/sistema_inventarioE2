@@ -17,6 +17,27 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# 1. Importa las vistas de tu app 'inventario'
+from inventario import views
+
 urlpatterns = [
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+
+    path('index/', views.index, name='index'),
+    path('', views.login_view, name='login'),
+    path('register/', views.register_view, name='register'),
+    path('logout/', views.logout_view, name='logout'),
+    path('productos/', views.productos, name='productos'),
+    path('movimientos/', views.movimientos, name='movimientos'),
+
+    path('api/', include('inventario.urls')),
+    path('api-auth/', include('rest_framework.urls')),
 ]
+
+# from django.contrib import admin
+# from django.urls import path, include
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('', include('inventario.urls')),
+# ]

@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html' %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+<h1>Bienvenido, {{ user.username }}</h1>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <a href="{% url 'productos' %}" class="btn btn-primary w-100">Productos</a>
+    </div>
+    <div class="col-md-4">
+        <a href="{% url 'movimientos' %}" class="btn btn-success w-100">Movimientos</a>
+    </div>
+</div>
+{% endblock %}
