@@ -128,7 +128,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'backend' / 'static',
+    BASE_DIR / 'inventario' / 'static',
 ]
 
 # Default primary key field type

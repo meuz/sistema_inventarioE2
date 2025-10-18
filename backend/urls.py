@@ -16,22 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
-# 1. Importa las vistas de tu app 'inventario'
 from inventario import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    path('index/', views.index, name='index'),
-    path('', views.login_view, name='login'),
-    path('register/', views.register_view, name='register'),
-    path('logout/', views.logout_view, name='logout'),
-    path('productos/', views.productos, name='productos'),
-    path('movimientos/', views.movimientos, name='movimientos'),
-
-    path('api/', include('inventario.urls')),
-    path('api-auth/', include('rest_framework.urls')),
+    path('', views.login, name='login'), # pagina principal donde se muestra el api root para que las personas puedan navegar, si es que no tienen permisos, al entrar en la direccion les dira que faltan persmisos, saltanto en la terminal un "GET /inventario/categorias/ HTTP/1.1" 403 o dependiendo
+    path('inventario/', include('inventario.urls'), name="inventario"),
+    path('inv-auth/', include('rest_framework.urls')),
 ]
 
 # from django.contrib import admin
@@ -41,3 +32,10 @@ urlpatterns = [
 #     path('admin/', admin.site.urls),
 #     path('', include('inventario.urls')),
 # ]
+
+# path('register/', views.register_view, name='register'),
+    # path('logout/', views.logout_view, name='logout'),
+    # path('productos/', views.productos, name='productos'),
+    # path('movimientos/', views.movimientos, name='movimientos'),
+    
+    # path('index/', views.index, name='index'),

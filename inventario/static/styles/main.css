@@ -1,62 +1,22 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
 }
 
-
-.navbar {
-    background: #666565;
-    padding: 20px 30px; /* el primero es el espaciado arriba-abajo y el segundo el de los lados de la navbar*/
-}
-
-.navbar ul li {
-    list-style: none;
-}
-
-.navbar li {
-    margin-left: 10px;
-}
-
-.navbar ul {
-    display: flex;
-    justify-content: flex-start;
-    padding: 0;
-}
-
-.navbar ul li a{
-    color: white;
-    text-decoration: none;
-}
-
-.navbar ul li a:hover {
-    color: rgb(177, 234, 237);
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
+.login-container {
+    width: 300px;
+    margin: 100px auto;
     padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.containernav {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.card {
-    background: whitesmoke;
-    color: black;
+button {
+    background-color: #007bff; /* ¡Botón azul! */
+    color: white;
     padding: 10px;
-    margin-bottom: 2px;
-}
-
-.input {
-    background: wheat;
-    padding: 10px;
-    text-align: center;
-    display: block;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
