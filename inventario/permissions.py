@@ -6,7 +6,7 @@ class EsAdmin(permissions.BasePermission):
 
 class EsConsultor(permissions.BasePermission):
     def has_permission(self, request, view):
-        if request.method in permissions.SAFE_METHODS:  # GET, HEAD, OPTIONS
+        if request.method in permissions.SAFE_METHODS:
             return request.user and request.user.is_authenticated and request.user.groups.filter(name='Consultor').exists()
         return False
 
