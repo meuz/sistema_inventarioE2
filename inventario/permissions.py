@@ -14,16 +14,13 @@ class PermisoMovimiento(permissions.BasePermission):
     def has_permission(self, request, view):
         if not request.user or not request.user.is_authenticated:
             return False
-        
-        # Admin puede hacer todo
+
         if request.user.groups.filter(name='Admin').exists():
             return True
-        
-        # Consultor solo puede ver
+
         if request.user.groups.filter(name='Consultor').exists():
             return request.method in permissions.SAFE_METHODS
-        
-        # Vendedor puede crear y ver
+
         if request.user.groups.filter(name='Vendedor').exists():
             return request.method in ['GET', 'POST', 'HEAD', 'OPTIONS']
         
