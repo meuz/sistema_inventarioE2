@@ -6,9 +6,6 @@ class FormCrearCategoria(forms.Form):
 class FormAñadirProveedor(forms.Form):
     pass
 
-class FormAñadirProducto(forms.Form):
-    pass
-
 class RegistrarMovimiento(forms.Form):
     pass
 
