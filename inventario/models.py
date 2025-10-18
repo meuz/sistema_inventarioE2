@@ -9,7 +9,7 @@ class Categoria(models.Model):
         return self.nombre
 
 class Proveedor(models.Model):
-    razon_social = models.CharField(max_length=200) # tuve que ponerle eso 
+    razon_social = models.CharField(max_length=200) 
     rut = models.CharField(max_length=9, unique=True) # unique para que sea unico 
     email = models.EmailField()
     telefono = models.CharField(max_length=10)

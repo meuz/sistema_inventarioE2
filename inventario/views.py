@@ -56,7 +56,7 @@ class ProductoViewSet(viewsets.ModelViewSet):
 class MovimientoViewSet(viewsets.ModelViewSet):
     queryset = Movimiento.objects.all()
     serializer_class = MovimientoSerializer
-    permission_classes = [PermisoMovimiento]  # Permisos por grupo para movimientos
+    permission_classes = [PermisoMovimiento]  # esto es para otorgar permisos por grupo para movimientos
 
     def perform_create(self, serializer):
         movimiento = serializer.save()
